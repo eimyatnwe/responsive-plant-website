@@ -44,10 +44,15 @@ addtocartBtn.forEach((eachBtn) => {
     cartImg =
       e.target.previousElementSibling.previousElementSibling
         .previousElementSibling.src;
-
-    const tr = document.createElement("tr");
-    tr.classList.add("shopitems");
-    tr.innerHTML = ` <td>
+    
+    if (e.target.innerText === "ADD TO CART") {
+      let countUpdate = ++count;
+      e.target.innerText = "CANCEL ORDER";
+      item.innerText = countUpdate;
+      
+      var tr = document.createElement("tr");
+      tr.classList.add("shopitems");
+      tr.innerHTML = ` <td>
               <div class="item-info">
                 <img src=${cartImg} class="cart-img" />
                 <div>
@@ -57,16 +62,19 @@ addtocartBtn.forEach((eachBtn) => {
               </div>
             </td>
             <td class="price">$<span class="realAmount">${numItemPrice}</span></td>`;
-
-    shopBagTable.appendChild(tr);
-
-    if (e.target.innerText === "ADD TO CART") {
-      let countUpdate = ++count;
-      e.target.innerText = "CANCEL ORDER";
-      item.innerText = countUpdate;
+      shopBagTable.appendChild(tr);
+      
     } else if (e.target.innerText === "CANCEL ORDER") {
       countUpdate = --count;
       e.target.innerText = "ADD TO CART";
+      
+      const shopitem = shopBagTable.children;
+
+      const [tbody, trow] = shopitem;
+      const [rowPrice] = trow.lastElementChild.children;
+      // console.log(rowPrice.innerText);
+      if (Number(rowPrice.innerText) === numItemPrice) trow.remove();
+      
       if (countUpdate === 0) {
         item.innerText = "";
       } else {
