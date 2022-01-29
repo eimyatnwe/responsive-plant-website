@@ -1,0 +1,699 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+
+  transition: 0.2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+}
+
+section {
+  padding: 3rem 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: lig; */
+  padding: 1.5rem 1rem;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 1;
+}
+
+.header img {
+  margin-left: 2rem;
+}
+
+.header .logo {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.header .logo span {
+  font-size: 1.4rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-left: 2rem;
+}
+
+.header .icons {
+  margin-left: 2rem;
+  color: #fff;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 3rem;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  font-size: 1.6rem;
+  color: #ffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  font-weight: bold;
+
+  transition: all 0.3s linear;
+}
+
+.header .icons div {
+  font-size: 2rem;
+
+  margin-left: 2.9rem;
+  cursor: pointer;
+}
+
+.header .icons div:hover {
+  color: #2e856e;
+}
+
+.header .icons #shopping-bag {
+  margin-right: 1rem;
+  position: relative;
+}
+
+.header .icons #menu {
+  display: none;
+}
+
+.header .search-box {
+  width: 50rem;
+  height: 5rem;
+  background-color: transparent;
+
+  display: flex;
+  align-items: center;
+
+  position: absolute;
+  top: 115%;
+  right: 7%;
+
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+.header .search-box.active {
+  transform: scaleY(1);
+}
+
+.header .search-box input {
+  width: 100%;
+  height: 100%;
+
+  font-size: 1.6rem;
+  font-family: inherit;
+  border: 2px solid #315a39;
+
+  padding: 1rem;
+}
+
+.header .search-box label {
+  margin-right: 1.5rem;
+  /* margin-left: 1rem; */
+  font-size: 2rem;
+  cursor: pointer;
+
+  padding: 1.3rem 1.2rem 1.27rem 1.2rem;
+  /* padding-bottom: 1.2rem; */
+  border: 2px solid #315a39;
+  border-left: 0;
+}
+
+.home {
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  color: #fff;
+  background-color: #315a39;
+  background: url("../img/the-bialons-MVCu1JIYuoM-unsplash\ \(1\).jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transition: 0.3s linear;
+
+  position: relative;
+}
+
+/* .home .img-content {
+  margin-left: 9rem;
+} */
+.home .content {
+  width: 50rem;
+  margin-left: 3rem;
+  padding: 2rem;
+  z-index: 0;
+}
+
+.home .content h3 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.home .content p {
+  font-size: 1.5rem;
+  line-height: 1.8;
+
+  margin-bottom: 2rem;
+}
+
+.home .content .home-btn {
+  font-size: 1.6rem;
+  color: #fff;
+
+  padding: 1.3rem 2rem;
+  border: 2px solid #315a39;
+  text-decoration: none;
+}
+
+.home .content .home-btn:hover {
+  background-color: #315a39;
+  color: #000;
+}
+
+.item {
+  font-size: 16px;
+
+  position: absolute;
+  top: -16px;
+  right: -10px;
+}
+
+.shopbag-list {
+  width: 400px;
+  height: 500px;
+  color: #000;
+  background-color: #fff;
+
+  z-index: 100;
+
+  box-shadow: 4px 10px 10px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  overflow: hidden;
+
+  display: none;
+
+  /* position: absolute;
+  top: 9rem;
+  left: 50rem; */
+}
+
+.shopbag-list.show {
+  display: block;
+}
+
+.shopbag-tb {
+  width: 100%;
+  border-collapse: collapse;
+}
+.shopbag-tr th {
+  color: #fff;
+  background-color: #315a39;
+  font-size: 1.5rem;
+
+  text-align: left;
+  padding: 20px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.shopitems {
+  text-transform: uppercase;
+}
+
+.item-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item-info img {
+  width: 80px;
+  height: 80px;
+
+  margin: 1rem;
+}
+
+.item-info div {
+  font-size: 1.7rem;
+  padding-top: 3rem;
+}
+
+.shopitems .quan input {
+  text-align: center;
+  padding: 1rem 2px;
+}
+
+.shopitems .price {
+  font-size: 1.6rem;
+  text-align: left;
+  padding-left: 2rem;
+}
+.about .about-box {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about .about-box .img-content {
+  flex: 1 1 45rem;
+  margin-left: 2rem;
+}
+
+.about .about-box .img-content img {
+  width: 90%;
+}
+
+.about .about-box .text-content {
+  flex: 1 1 45rem;
+}
+
+.about .about-box .text-content h3 {
+  font-size: 3rem;
+
+  padding: 2rem 1rem;
+  /* text-align: center; */
+  text-transform: uppercase;
+}
+
+.about .about-box .text-content p {
+  font-size: 1.8rem;
+
+  padding: 1rem;
+  line-height: 1.8;
+}
+
+.shop {
+  /* background-color: rgb(226, 223, 223); */
+
+  background-color: #ccb598;
+}
+
+.shop .shop-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.shop h3 {
+  font-size: 3rem;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.shop .shop-box .box {
+  background-color: beige;
+
+  padding: 2rem 5rem;
+  margin: 2rem 5rem;
+  margin-left: 7rem;
+  cursor: pointer;
+
+  box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.shop .shop-box .box img {
+  height: 20rem;
+  margin-bottom: 1rem;
+}
+
+.shop .shop-box .box img:hover {
+  transform: scale(0.98);
+}
+
+.shop .shop-box .box h4 {
+  font-size: 1.7rem;
+
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.shop .shop-box .box div {
+  font-size: 1.5rem;
+
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.shop .shop-box .box .btn {
+  background-color: #315a39;
+  color: #fff;
+
+  padding: 1rem 1.8rem;
+  margin-left: 2rem;
+  cursor: pointer;
+
+  border: 0;
+
+  text-transform: uppercase;
+}
+
+.shop .shop-box .box .btn:active {
+  transform: scale(0.97);
+}
+
+.service {
+  /* background-color: rgb(226, 223, 223); */
+  background-color: #fff;
+  margin-bottom: 3rem;
+}
+
+.service h3 {
+  font-size: 2.6rem;
+  font-family: inherit;
+
+  text-transform: uppercase;
+  text-align: center;
+
+  margin: 5rem 0;
+}
+
+.service .service-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap-reverse;
+
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.service .service-box .box {
+  width: 40rem;
+  height: 35rem;
+
+  margin: 2rem 6rem;
+  padding: 1.3rem 2rem;
+
+  text-align: left;
+}
+
+.service .service-box .box div {
+  font-size: 3rem;
+  color: #000;
+  background-color: lightcoral;
+  padding: 1.4rem 2rem;
+  border-radius: 5px;
+
+  margin-bottom: 2rem;
+}
+
+.service .service-box .box h4 {
+  font-size: 2rem;
+
+  text-transform: uppercase;
+  margin-bottom: 1.3rem;
+}
+
+.service .service-box .box span {
+  font-size: 1.4rem;
+}
+
+.service .service-box .box p {
+  font-size: 1.6rem;
+
+  line-height: 1.9;
+  margin-top: 1.4rem;
+}
+
+.service .service-box .box:hover {
+  box-shadow: 15px 20px 10px rgba(0, 0, 0, 0.4);
+}
+
+.faqs .title {
+  font-size: 2.6rem;
+
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.faqs .faq-box {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.faqs .faq-box .faq-img {
+  /* background-color: #315a39; */
+  flex: 1 1 45rem;
+}
+
+.faqs .faq-box .faq-img img {
+  width: 450px;
+  height: 400px;
+}
+
+.faqs .faq-box .questions {
+  flex: 1 1 45rem;
+  margin: auto;
+}
+
+.faqs .faq-box .questions .faq-ques {
+  border: 1px solid #315a39;
+  border-radius: 10px;
+  padding: 1.5rem 2.5rem;
+  margin: 2rem 0;
+
+  position: relative;
+}
+
+.faq-ques.active {
+  background-color: #315a39;
+  color: aliceblue;
+  box-shadow: 4px 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.faq-ques h3 {
+  font-size: 2rem;
+  margin: 1.7rem 0;
+}
+
+.faq-ques p {
+  display: none;
+}
+
+.faq-ques.active p {
+  font-size: 1.7rem;
+  display: block;
+}
+
+.faq-ques .toggle {
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  background-color: transparent;
+
+  border: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+
+.faq-ques .toggle .fa-chevron-down {
+  display: block;
+  cursor: pointer;
+}
+
+.faq-ques.active .toggle .fa-chevron-down {
+  display: none;
+}
+
+.faq-ques .toggle .fa-times {
+  display: none;
+  cursor: pointer;
+}
+
+.faq-ques.active .toggle .fa-times {
+  display: block;
+}
+
+footer {
+  background-color: #ccb598;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  padding: 3rem 0;
+
+  text-transform: uppercase;
+}
+
+footer .footer-about h4 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+footer .footer-about p {
+  font-size: 1.4rem;
+  text-transform: none;
+  line-height: 1.6;
+}
+
+footer .footer-nav {
+  margin: 0 7rem;
+}
+
+footer .footer-nav h4 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+footer .footer-nav a {
+  display: block;
+  font-size: 1.5rem;
+  color: black;
+  text-decoration: none;
+  text-align: center;
+
+  margin-bottom: 1rem;
+  /*margin-right: 1.5rem;*/
+}
+
+footer .address h4 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 2.6rem;
+}
+
+footer .address div {
+  margin-bottom: 1rem;
+}
+
+footer .address div i {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+footer .address div span {
+  font-size: 1.5rem;
+  text-transform: none;
+}
+
+footer .address .add {
+  font-size: 1.5rem;
+}
+
+footer .address img {
+  width: 20%;
+  height: 20%;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  header {
+    padding: 1.5rem 2rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .header .icons #menu {
+    display: inline-block;
+    margin-right: 1rem;
+  }
+
+  .header {
+    background-color: #315a39;
+    position: fixed;
+  }
+
+  nav ul {
+    background-color: #315a39;
+    width: 100%;
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    flex-direction: column;
+    text-align: center;
+    transition: all 0.7s linear;
+  }
+
+  nav ul.active {
+    left: 0;
+  }
+
+  nav ul li {
+    margin: 1rem 0;
+  }
+
+  .home .content .home-btn {
+    color: #fff;
+    background-color: #315a39;
+  }
+
+  footer {
+    text-align: left;
+  }
+}
+
+@media (max-width: 750px) {
+  .shopbag-list {
+    width: 370px;
+    position: absolute;
+    top: 9rem;
+    left: 20rem;
+  }
+}
+
+@media (max-width: 600px) {
+  footer .footer-nav h4 {
+    margin-right: 16.9rem;
+    margin-top: 2rem;
+  }
+
+  footer .footer-nav a {
+    margin-right: 16.9rem;
+    text-align: left;
+  }
+
+  .shopbag-list {
+    width: 350px;
+    height: 450px;
+    position: absolute;
+    top: 100px;
+    left: 50px;
+  }
+}
