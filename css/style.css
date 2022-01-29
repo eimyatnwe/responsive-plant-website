@@ -676,6 +676,17 @@ footer .address img {
     top: 9rem;
     left: 20rem;
   }
+  .faqs .faq-box .faq-img img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .service .service-box .box p {
+    font-size: 1.4rem;
+
+    line-height: 1.6;
+    margin-top: 1.4rem;
+  }
 }
 
 @media (max-width: 600px) {
@@ -690,8 +701,8 @@ footer .address img {
   }
 
   .shopbag-list {
-    width: 350px;
-    height: 450px;
+    width: 250px;
+    height: 300px;
     position: absolute;
     top: 100px;
     left: 50px;
