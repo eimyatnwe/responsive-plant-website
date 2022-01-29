@@ -690,6 +690,15 @@ footer .address img {
 }
 
 @media (max-width: 600px) {
+  .faq-ques h3 {
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .faq-ques.active p {
+    font-size: 1.2rem;
+  }
+  
   footer .footer-nav h4 {
     margin-right: 16.9rem;
     margin-top: 2rem;
