@@ -20,7 +20,6 @@ searchicon.addEventListener("click", () => {
   searchbox.classList.toggle("active");
 });
 
-document.getElementById("searchi").addEventListener("input", getSearchInput);
 
 const links = document.querySelectorAll(".navlinks");
 links.forEach((link) => {
